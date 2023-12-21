@@ -15,3 +15,7 @@ def countNucFrequency(seq):
     for nuc in seq:
         tmpFreqDict[nuc] += 1
     return tmpFreqDict
+
+# Create a complemantary DNA sequence, DNA--->RNA
+def transcription(seq):
+    return seq.replace('T', 'U')

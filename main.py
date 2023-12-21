@@ -9,7 +9,8 @@ rndDNAseq = 'atgctgatgctg'
 randDNAStr = ''.join([random.choice(Nucleotides)
                       for nuc in range(50)])
 
-DNAStr = validateSeq(randDNAStr)
+DNAStr = validateSeq(randDNAStr) # Creating a validated, random DNA sequence
 
-print(validateSeq(randDNAStr)) # Returns a validated sequence
-print(countNucFrequency(DNAStr)) # Counts nucleotides in a validated sequence
+print(f'Validated Sequence: {validateSeq(randDNAStr)}') # Returns a validated sequence
+print(f'[1] + The nucleotide count of the validated sequence is {countNucFrequency(DNAStr)}') # Return the count of nucleotides in a validated sequence
+print(f'[2] + The complemenrary RNA sequence is: {transcription(DNAStr)}') #Returns the complementary RNA sequence (transcription)
