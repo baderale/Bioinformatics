@@ -1,8 +1,6 @@
 # DNA Toolset/Code 
 from structures import *
 
-Nucleotides = ['A', 'C', 'T', 'G']
-
 # DNA Sequence Validation fucntion
 def validateSeq(dna_seq):
     tmpseq = dna_seq.upper() 
@@ -24,8 +22,11 @@ def transcription(seq):
     return seq.replace('T', 'U')
 
 # Create a DNA reverse complement
-DNA_ReverseComplement = {'A':'T', 'T':'A', 'G':'C', 'C':'G'} # Dictionary with complements
 def reverse_complement(seq):
     """ Swaps Adenine(A) with Thymine(T) and Guanine(G) with Cytosine(C).
         Creates a reverse string"""
     return ''.join([DNA_ReverseComplement[nuc] for nuc in seq])[::-1]
+
+def gc_content(seq):
+        """GC Content in a DNA/RNA sequence"""
+        return round((seq.count('C') + seq.count('G')) / len(seq) * 100)
