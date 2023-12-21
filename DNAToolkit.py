@@ -19,3 +19,8 @@ def countNucFrequency(seq):
 # Create a complemantary DNA sequence, DNA--->RNA
 def transcription(seq):
     return seq.replace('T', 'U')
+
+# Create a DNA reverse complement
+DNA_ReverseComplement = {'A':'T', 'T':'A', 'G':'C', 'C':'G'} # Dictionary with complements
+def reverse_complement(seq):
+    return ''.join([DNA_ReverseComplement[nuc] for nuc in seq])[::-1]
