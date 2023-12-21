@@ -1,4 +1,5 @@
 from DNAToolkit import *
+from utilities import colored
 import random
 
 rndDNAseq = 'atgctgatgctg'
@@ -11,9 +12,9 @@ randDNAStr = ''.join([random.choice(Nucleotides)
 
 DNAStr = validateSeq(randDNAStr) # Creating a validated, random DNA sequence
 
-print(f'Sequence: {validateSeq(randDNAStr)}') # Returns a validated sequence
-print(f'[1] + The nucleotide count of the validated sequence is {countNucFrequency(DNAStr)}') # Return the count of nucleotides in a validated sequence
-print(f'[2] + The complementary RNA sequence is: {transcription(DNAStr)}') #Returns the complementary RNA sequence (transcription)
-print(f"[3] + The reverse complement is:\n5' {DNAStr} 3' ")
-print(f"   {''.join(['|' for c in range(len(DNAStr))])}")
-print()
+print(f'Sequence: {colored(DNAStr)}') # Returns a validated sequence
+print(colored(f'[1] *** Nucleotide Frequency: {countNucFrequency(DNAStr)}')) # Return the count of nucleotides in a validated sequence
+print(f'[2] *** Complementary RNA sequence: {colored(transcription(DNAStr))}') #Returns the complementary RNA sequence (transcription)
+print(f"[3] *** DNA Sequence + Reverse Complement:\n        5' {colored(DNAStr)} 3' ")
+print(f"           {''.join(['|' for c in range(len(DNAStr))])}")
+print(f"        3' {colored(reverse_complement(DNAStr))} 5'")
